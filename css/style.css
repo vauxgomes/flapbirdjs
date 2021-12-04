@@ -1,0 +1,75 @@
+:root {
+    --window-width: 400px;
+    --window-height: 500px;
+
+    --bar-width: 50px;
+
+    --hole-width: 50px;
+    --hole-height: 150px;
+
+    --bird-width: 20px;
+    --bird-height: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    width: var(--window-width);
+    height: var(--window-height);
+
+    border: 2px solid black;
+    margin: 0 auto;
+
+    overflow: hidden;
+}
+
+#bar {
+    width: var(--bar-width);
+    height: var(--window-height);
+
+    background-color: #349b46;
+
+    position: relative;
+    left: var(--window-width);
+
+    animation: movement 2s infinite linear;
+}
+
+@keyframes movement {
+    0% {
+        left: var(--window-width);
+    }
+
+    100% {
+        left: calc(var(--bar-width) * -1);
+    }
+}
+
+#hole {
+    width: var(--hole-width);
+    height: var(--hole-height);
+
+    background-color: #fff;
+
+    position: relative;
+    left: var(--window-width);
+    top: calc(var(--window-height) * -1 + 30px);
+
+    animation: movement 2s infinite linear;
+}
+
+#bird {
+    width: var(--bird-width);
+    height: var(--bird-height);
+
+    background-color: #cb2027;
+
+    position: absolute;
+    top: 100px;
+
+    border-radius: 50%;
+}
